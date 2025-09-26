@@ -18,11 +18,14 @@ void Try(int i){
 }
 int main(){
     cin >> n >> k;
+    cin.ignore();
     string s;
+    getline(cin,s);
     set<string>se;
-    for(int i=1;i<=n;i++){
-        cin >> s;
-        se.insert(s);
+    stringstream ss(s);
+    string w;
+    while(ss>>w){
+        se.insert(w);
     }
     for(auto it=se.begin();it!=se.end();it++){
         v.push_back(*it);
